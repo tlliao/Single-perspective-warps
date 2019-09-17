@@ -1,6 +1,6 @@
 # Single-Perspective Warps in Natural Image Stitching
 
-This repository is our implementation of the IEEE TIP 2019 paper, Single-perspective Warps in Natural Image Stitching. If you use any code or data from our work, please cite our paper.
+This repository is our implementation of the IEEE TIP 2019 paper, Single-Perspective Warps in Natural Image Stitching. If you use any code or data from our work, please cite our paper.
 
 ### Usage
 
@@ -15,11 +15,9 @@ This repository is our implementation of the IEEE TIP 2019 paper, Single-perspec
   title={Single-perspective Warps in Natural Image Stitching},
   author={Liao, Tianli and Li, Nan},
   journal={IEEE Transactions on Image Processing},
-  volume={12},
-  number={5},
-  pages={967--974},
-  year={2018},
-  publisher={Springer}
+  doi={10.1109/TIP.2019.2934344},
+  year={2019},
+  publisher={IEEE}
 }
 ```
 
