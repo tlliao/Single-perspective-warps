@@ -12,7 +12,7 @@ This repository is our implementation of the IEEE TIP 2019 paper, Single-Perspec
 ### Citation
 ```
 @article{liao2019single,
-  title={Single-perspective Warps in Natural Image Stitching},
+  title={Single-Perspective Warps in Natural Image Stitching},
   author={Liao, Tianli and Li, Nan},
   journal={IEEE Transactions on Image Processing},
   doi={10.1109/TIP.2019.2934344},
