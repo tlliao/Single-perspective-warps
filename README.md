@@ -23,4 +23,4 @@ This repository is our implementation of the IEEE TIP 2019 paper, Single-Perspec
 
 ### Contact
 
-If you have any comments, suggestions, or questions, please contact me (tianli.liao@haut.edu.cn).
+If you have any comments, suggestions, or questions, please feel free to contact me (tianli.liao@haut.edu.cn).
