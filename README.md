@@ -2,6 +2,8 @@
 
 This repository is our implementation of the IEEE TIP 2019 paper, Single-Perspective Warps in Natural Image Stitching. If you use any code or data from our work, please cite our paper.
 
+The codes are designed for two-image stitching, for multiple images, please refer to [Single-perspective-warps-multiple](https://github.com/tlliao/Single-perspective-warps-multiple).
+
 ### Usage
 
 1. Download code, add images in the folder "Imgs" in the main path and run the "main.m".
