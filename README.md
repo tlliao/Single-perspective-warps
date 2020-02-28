@@ -14,12 +14,15 @@ The codes are designed for two-image stitching, for multiple images, please refe
 ### Citation
 ```
 @article{liao2019single,
-  title={Single-Perspective Warps in Natural Image Stitching},
-  author={Liao, Tianli and Li, Nan},
-  journal={IEEE Transactions on Image Processing},
-  doi={10.1109/TIP.2019.2934344},
-  year={2019},
-  publisher={IEEE}
+title={Single-Perspective Warps in Natural Image Stitching},
+author={Liao, Tianli and Li, Nan},
+journal={IEEE Transactions on Image Processing},
+volume={29},
+number={},
+pages={724--735},
+year={2020},
+doi={10.1109/TIP.2019.2934344},
+publisher={IEEE}
 }
 ```
 
