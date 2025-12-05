@@ -16,11 +16,12 @@ img_n = size(cell_imgs,1);  % number of images
 imgs_pairs = [(1:img_n-1)', (2:img_n)']; % generating image pairs with all available image idexes.
 imgs_pairs = [imgs_pairs ones(size(imgs_pairs,1),1)]; % last column indicates if the pair is valid or not.
 
-cell_kp = cell(img_n,1);  cell_ds = cell(img_n,1); 
+cell_features = cell(img_n,1);  cell_validpts = cell(img_n,1); 
 orig_lines = cell(img_n,1);
 fprintf('  Keypoint detection and matching...');tic;
 for i=1:img_n
-    [ cell_kp{i}, cell_ds{i} ] = vl_sift(single(rgb2gray(cell_imgs{i})),'PeakThresh', 0,'edgethresh',500);
+    tmppoints = detectSIFTFeatures(rgb2gray(cell_imgs{i}));
+    [cell_features{i}, cell_validpts{i}] = extractFeatures(rgb2gray(cell_imgs{i}),tmppoints);
     orig_lines{i}=lsd(cell_paths{i});
 end
 
@@ -33,9 +34,13 @@ data_lines = cell(size(imgs_pairs,1),1);
 h  = cell(size(imgs_pairs,1),1);
 for k=1:size(imgs_pairs,1)
     m = imgs_pairs(k,1);  n = imgs_pairs(k,2);
-    kp1 = cell_kp{m}; kp2 = cell_kp{n};
-    matches = vl_ubcmatch(cell_ds{m},cell_ds{n});  
-    data_orig{k} = [ kp1(1:2,matches(1,:)) ; ones(1,size(matches,2)) ; kp2(1:2,matches(2,:)) ; ones(1,size(matches,2)) ]; 
+    validpts1=cell_validpts{m}; validpts2=cell_validpts{n};
+    indexPairs = matchFeatures(cell_features{m}, cell_features{n}, 'MatchThreshold',10);
+    matchedPoints1 = validpts1(indexPairs(:,1),:);
+    matchedPoints2 = validpts2(indexPairs(:,2),:);
+    pts1=double(matchedPoints1.Location');
+    pts2=double(matchedPoints2.Location');
+    data_orig{k} = [ pts1 ; ones(1,size(pts1,2)) ; pts2 ; ones(1,size(pts2,2)) ]; 
     
     %% APAP's multi-sampling method
     % outlier removal - Multi-GS (RANSAC).

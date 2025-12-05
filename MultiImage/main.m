@@ -1,10 +1,9 @@
 clear; clc; close all;
-%% Setup VLFeat toolbox and add other papers' codes.
+%% add other papers' codes.
 %----------------------
 addpath('modelspecific'); addpath('multigs');
 addpath('texture_mapping');
 addpath('LSD_matlab'); addpath('LineMatching');
-run('vlfeat-0.9.21/toolbox/vl_setup');
 grid_size = 40;
 %----------------- parameter of energy minimization
 %     line-align-(al), shape-(ps), shorten-(pj), line-(le)
